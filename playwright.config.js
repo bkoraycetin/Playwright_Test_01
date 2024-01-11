@@ -40,7 +40,7 @@ module.exports = {
   // Configure additional options for running the tests
   use: {
     headless: true, // Run tests in headless mode by default
-    viewport: { width: 1280, height: 720 }, // Default viewport size
+    viewport: { width: 1920, height: 1080 }, // Default viewport size
     // Configure other global settings like baseURL, ignoreHTTPSErrors, etc.
   },
 

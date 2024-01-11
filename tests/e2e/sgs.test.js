@@ -11,14 +11,16 @@ test.describe('SGS Tests', () => {
      await page.locator('section').filter({ hasText: 'Waar bent u naar op zoek?' }).getByPlaceholder('Zoeken').click();
      await page.locator('section').filter({ hasText: 'Waar bent u naar op zoek?' }).getByPlaceholder('Zoeken').fill('vacatures');
      await page.locator('section').filter({ hasText: 'Waar bent u naar op zoek?' }).getByPlaceholder('Zoeken').press('Enter');
+     await page.waitForLoadState('networkidle')
 
      await page.getByText('Relevantie Date: Ascending').click();
      await page.locator('div').filter({ hasText: /^Date: Ascending$/ }).click();
     const element = page.locator("//div[@class='coveo-list-layout CoveoResult'][1]");
     await expect(element).toContainText('Vacatures');
 
+
     //take a screenshot
-   await page.screenshot({ path: 'sgs_test.png' });
+   await page.screenshot({ path: 'sgstest.png' });
 
   });
 });
